@@ -9,7 +9,7 @@ const got = document.querySelector(".got");
 
     console.log(gotCharacters); 
     
-    got.innerHTML = `<h1>${gotCharacters.fullName}</h1>
+    got.innerHTML = `<h1>${gotCharacters.id}</h1>
                  <p>${gotCharacters.family}</p> 
                  <div class="details-title">${gotCharacters.title}</div>`;  
  }
