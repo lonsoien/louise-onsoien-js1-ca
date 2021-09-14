@@ -16,13 +16,13 @@
  function validateForm() {
      event.preventDefault();
 
-     if (checkLength(fullName.value, 0) === true) {
+     if (lengthControl(fullName.value, 0) === true) {
          fullNameError.style.display = "none"; 
      } else {
          fullNameError.style.display = "block"; 
      }
 
-     if (checkLength(subject.value, 9) === true) {
+     if (lengthControl(subject.value, 9) === true) {
          subjectError.style.display = "none"; 
     } else {
         subjectError.style.display = "block"; 
@@ -34,7 +34,7 @@
         emailerror.style.display = "block"; 
     }
 
-    if (checkLength(adress.value, 24) === true) {
+    if (lengthControl(adress.value, 24) === true) {
         adressError.style.display = "none"; 
 
    } else {
@@ -46,7 +46,7 @@
 
   form.addEventListener("submit", validateForm); 
 
-  function checkLength(value, len) {
+  function lengthControl(value, len) {
       if (value.trim().length > len) {
           return true; 
       } else {
@@ -61,49 +61,6 @@
      return patternMatches; 
  }
 
-
-
-
-
-   //  if (fullName.value.trim().length > 0) {
-      //   fullnameError.style.display = "none"; 
-    // }
-  //   else {
-     //    fullnameError.style.display = "block"; 
-  //   }
-
-   //  if (subject.value.trim().length > 9) {
-       // subjectError.style.display = "none"; 
-   // }
- //   else {
-  //      subjectError.style.display = "block"; 
-  //  }
-
-
-
-
-
- //form.onsubmit = function() {
-   //  event.preventDefault();
-
-  //   console.log(event);
-
-  //   const name = document.querySelector("#name"); 
-
-  //   console.log(name.value); 
-
-  //   const subject = document.querySelector("#subject"); 
-
-   //  console.log(subject.value); 
-
-  //   const email = document.querySelector("#email"); 
-
- //    console.log(email.value); 
-
-  //   const adress = document.querySelector("#adress"); 
-
-   //  console.log(adress.value); 
- //}; 
 
 
 
