@@ -23,6 +23,17 @@ li {
   list-style: none;
 }
 
+#schoolform {
+  margin: 20px;
+  width: 200px;
+  font-size: 12px;
+}
+
+.errorform {
+  display: none;
+  color: red;
+}
+
 .spin {
   animation: spin 2s linear infinite;
   width: 100px;

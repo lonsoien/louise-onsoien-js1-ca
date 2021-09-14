@@ -1,27 +1,109 @@
  
  const form = document.querySelector("#schoolform");
+ 
+ const fullName = document.querySelector("#fullName"); 
+ const fullnameError = document.querySelector("#fullNameError"); 
 
- form.onsubmit = function() {
+ const subject = document.querySelector("#subject"); 
+ const subjecterror = document.querySelector("#subjectError"); 
+
+ const email = document.querySelector("#email");
+ const emailerror = document.querySelector("#emailError"); 
+
+ const adress = document.querySelector("#adress"); 
+ const adresserror = document.querySelector("#adressError");
+
+ function validateForm() {
      event.preventDefault();
 
-     console.log(event);
+     if (checkLength(fullName.value, 0) === true) {
+         fullNameError.style.display = "none"; 
+     } else {
+         fullNameError.style.display = "block"; 
+     }
 
-     const name = document.querySelector("#name"); 
+     if (checkLength(subject.value, 9) === true) {
+         subjectError.style.display = "none"; 
+    } else {
+        subjectError.style.display = "block"; 
+    }
 
-     console.log(name.value); 
+    if (validateEmail(email.value) === true) {
+        emailerror.style.display = "none"; 
+    } else {
+        emailerror.style.display = "block"; 
+    }
 
-     const subject = document.querySelector("#subject"); 
+    if (checkLength(adress.value, 24) === true) {
+        adressError.style.display = "none"; 
 
-     console.log(subject.value); 
+   } else {
+       adressError.style.display = "block"; 
+   }
 
-     const email = document.querySelector("#email"); 
+   console.log("post")
+}
 
-     console.log(email.value); 
+  form.addEventListener("submit", validateForm); 
 
-     const adress = document.querySelector("#adress"); 
+  function checkLength(value, len) {
+      if (value.trim().length > len) {
+          return true; 
+      } else {
+          return false;
 
-     console.log(adress.value); 
- }; 
+     }
+}
+
+ function validateEmail(email) {
+     const regEx = /\S+@\S+\.\S+/; 
+     const patternMatches = regEx.test(email); 
+     return patternMatches; 
+ }
+
+
+
+
+
+   //  if (fullName.value.trim().length > 0) {
+      //   fullnameError.style.display = "none"; 
+    // }
+  //   else {
+     //    fullnameError.style.display = "block"; 
+  //   }
+
+   //  if (subject.value.trim().length > 9) {
+       // subjectError.style.display = "none"; 
+   // }
+ //   else {
+  //      subjectError.style.display = "block"; 
+  //  }
+
+
+
+
+
+ //form.onsubmit = function() {
+   //  event.preventDefault();
+
+  //   console.log(event);
+
+  //   const name = document.querySelector("#name"); 
+
+  //   console.log(name.value); 
+
+  //   const subject = document.querySelector("#subject"); 
+
+   //  console.log(subject.value); 
+
+  //   const email = document.querySelector("#email"); 
+
+ //    console.log(email.value); 
+
+  //   const adress = document.querySelector("#adress"); 
+
+   //  console.log(adress.value); 
+ //}; 
 
 
 

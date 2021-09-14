@@ -17,16 +17,36 @@
 <body>
     <form id="schoolform">
         <div>
-            <input name="fullname" id="name" placeholder="Name" />
+            <label>
+                Full Name (required)
+                <input name="fullname" id="fullName" placeholder="Name" />
+            </label>
+            <div class="errorform" id="fullNameError">Please enter full name</div>
         </div>
+
         <div>
-            <input name="Subject" id="subject" placeholder=Subject />
+            <label>
+                Enter Subject
+                <input name="Subject" id="subject" placeholder=Subject />
+            </label>
+            <div class="errorform" id="subjectError">At least 10 length</div>
         </div>
+
         <div>
-            <input name="Email" id="email" placeholder=Email />
+            <label>
+                Enter Email
+                <input name="Email" id="email" placeholder=Email />
+            </label>
+            <div class="errorform" id="emailError">Enter valid email</div>
         </div>
-        
-        <input name="Adress" id="adress" placeholder=Adress />
+
+        <div>
+            <label>
+                Enter adress 
+                <input name="Adress" id="adress" placeholder=Adress />
+                <div class="errorform" id="adressError">Enter valid adress</div>
+            </label>
+        </div>
         <button>Submit</button>
     </form>
     <script src="/contact.js"></script>
