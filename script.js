@@ -1,7 +1,11 @@
-const url = "https://thronesapi.com/api/v2/Characters"; 
+const url = homePage(); 
 
 const detailCharacter = document.querySelector(".detailCharacter");
  
+function homePage() {
+    return "https://thronesapi.com/api/v2/Characters";
+}
+
 async function gameOfthrones() {
     const response = await fetch(url); 
     const results = await response.json(); 

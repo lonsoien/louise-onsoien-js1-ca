@@ -1,16 +1,16 @@
 const container = document.querySelector(".container");
 
-const url = "http://127.0.0.1:5500/details.html?id=0" + id;
-
-console.log(url); 
-
 const queryString = document.location.search; 
 
 const params = new URLSearchParams(queryString); 
 
 const id = params.get("id");
 
-console.log(id); 
+console.log(id);
+
+const url = "https://thronesapi.com/api/v2/Characters/2" + id;
+
+console.log(url);
 
 async function gameOfthrones() {
     const response = await fetch(url); 
@@ -18,13 +18,15 @@ async function gameOfthrones() {
 
     console.log(results); 
 
-    results.forEach(function(characters) {
-        container.innerHTML += `<div>${characters.id}" class="character"></div>
-        <h2>${characters.fullName}</h2> 
-        <img src="${characters.imageUrl}" alt="${characters.fullName}" />
-         belongs to <h3>${characters.family}</h3>
-         also known as <h4>${characters.title}</h4>`; 
-    });
-}
+    makeHTML(results); 
+ }
 
 gameOfthrones();
+
+function makeHTML(results) {
+    container.innerHTML += `<div>${results.id}
+       <h2>${results.fullName}</h2> 
+       <img src="${results.imageUrl}" alt="${results.fullName}" />
+        belongs to <h3>${results.family}</h3>
+        also known as <h4>${results.title}</h4></div>`;
+}
