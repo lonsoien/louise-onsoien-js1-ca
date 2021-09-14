@@ -11,7 +11,7 @@ async function gameOfthrones() {
     //loop array of objects
 
     results.forEach(function(characters) {
-        detailCharacter.innerHTML += `<a href="details.html?id=${characters.fullName}" class="character">
+        detailCharacter.innerHTML += `<a href="details.html?id=${characters.id}" class="character">
         <h2>${characters.fullName}</h2> 
         <img src="${characters.imageUrl}" alt="${characters.fullName}" />
          belongs to <h3>${characters.family}</h3>
