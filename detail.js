@@ -24,7 +24,7 @@ async function gameOfthrones() {
 gameOfthrones();
 
 function makeHTML(results) {
-    container.innerHTML += `<div>${results.id}
+    container.innerHTML += `<div>
        <h2>${results.fullName}</h2> 
        <img src="${results.imageUrl}" alt="${results.fullName}" />
         belongs to <h3>${results.family}</h3>
