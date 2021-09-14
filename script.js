@@ -1,20 +1,22 @@
 const url = "https://thronesapi.com/api/v2/Characters"; 
+
+const detailCharacter = document.querySelector(".detailCharacter");
  
-const got = document.querySelector(".got");
+async function gameOfthrones() {
+    const response = await fetch(url); 
+    const results = await response.json(); 
 
+    console.log(results); 
 
- async function gameOfthrones() {
-    const response = await fetch(url);
-    const gotCharacters = await response.json(); 
+    //loop array of objects
 
-    console.log(gotCharacters); 
-    
-    got.innerHTML = `<h1>${gotCharacters.id}</h1>
-                 <p>${gotCharacters.family}</p> 
-                 <div class="details-title">${gotCharacters.title}</div>`;  
- }
+    results.forEach(function(characters) {
+        detailCharacter.innerHTML += `<div class="character">
+        <h2>${characters.fullName}</h2> 
+        <img src="${characters.imageUrl}" alt="${characters.fullName}" />
+         belongs to <h3>${characters.family}</h3>
+         also known as <h4>${characters.title}</h4></div>`; 
+    });
+}
 
- gameOfthrones();
-
- // <div class="character-image"
- //style="background-image: url(`${gotCharacters.image}`)";></div>
+gameOfthrones(); 
